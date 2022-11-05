@@ -9,13 +9,11 @@
 
 //remote database connection:
 
-$host = 'remotemysql.com';
-$db = "EfIHr2Rh6H";
-$user = 'EfIHr2Rh6H';
-$pass = '3RjWvm9pLh';
+$host = 'sql8.freemysqlhosting.net	';
+$db = "sql8544821";
+$user = 'sql8544821';
+$pass = 'F4KUlMyQ6F';
 $charset = 'utf8mb4';
-
-
 
 $dsn = "mysql:host = $host; dbname=$db; charset=$charset";
 
@@ -28,15 +26,6 @@ catch(PDOException $e) {
     throw new PDOException($e->getMessage());
 }
 
-$cleardb_url = parse_url(getenv("CLEARDB_DATABASE_URL"));
-$cleardb_server = $cleardb_url["host"];
-$cleardb_username = $cleardb_url["user"];
-$cleardb_password = $cleardb_url["pass"];
-$cleardb_db = substr($cleardb_url["path"],1);
-$active_group = 'default';
-$query_builder = TRUE;
-// Connect to DB
-$conn = mysqli_connect($cleardb_server, $cleardb_username, $cleardb_password, $cleardb_db);
 
 //after succesfully connecting, then activate crud.php, i.e. create an instance of crud
 //the functions we will use are in the crud.php file
